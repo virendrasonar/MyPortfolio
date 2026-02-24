@@ -7,8 +7,8 @@ const Index = () => {
       <main>
         <Hero />
         <About />
-        <Skills />
         <Projects />
+        <Skills />
         <Contact />
       </main>
     </div>
