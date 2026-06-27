@@ -13,8 +13,9 @@ const navItems = [
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDark, setIsDark] = useState(true);
-
+  const [isDark, setIsDark] = useState(
+    document.documentElement.classList.contains('dark')
+  );
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
@@ -40,11 +41,11 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-        ? 'backdrop-blur-xl bg-background/70 border-b border-border/60 shadow-[0_10px_30px_rgba(0,0,0,0.08)] py-3'
+        ? 'backdrop-blur-xl bg-background/70 border-b border-border/60 shadow-[0_10px_30px_rgba(0,0,0,0.08)] py-4'
         : 'bg-transparent py-6'
         }`}
     >
-      <div className="container mx-auto px-6 lg:px-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-16">
         <div className="flex items-center justify-between">
 
           <a
@@ -53,7 +54,7 @@ export function Navigation() {
               e.preventDefault();
               scrollToSection('#home');
             }}
-            className="text-xl font-extrabold tracking-tight transition-all duration-300 hover:opacity-80"
+            className="text-2xl sm:text-3xl font-extrabold tracking-tight transition-all duration-300 hover:scale-105"
           >
             <span className="
     bg-gradient-to-r from-blue-900 to-indigo-600
@@ -91,9 +92,8 @@ export function Navigation() {
               </a>
             ))}
 
-            {/* FIXED RESUME BUTTON (Outline Style) */}
             <a
-              href="/virendra-sonar-java-full-stack-developer-resume.pdf"
+              href="/Virendra_Sonar_FSD_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -144,7 +144,7 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
+          className={`md:hidden overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'
             }`}
         >
           <div className="backdrop-blur-xl bg-background/80 border border-border rounded-xl p-4 space-y-4 shadow-lg">
@@ -170,7 +170,7 @@ export function Navigation() {
               className="w-full border-primary/60 hover:border-primary hover:bg-primary/10 rounded-[8px]"
             >
               <a
-                href="/Virendra_Sonar_Resume.pdf"
+                href="/virendra-sonar-java-full-stack-developer-resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >

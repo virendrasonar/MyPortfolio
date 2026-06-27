@@ -1,52 +1,36 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { cn } from '@/lib/utils';
+import {
+  SiSpringboot,
+  SiAngular,
+  SiJavascript,
+  SiHtml5,
+  SiMysql,
+  SiCss,
+  SiGit,
+  SiGithub,
+  SiPostman,
+} from "react-icons/si";
 
-const skillCategories = [
-  {
-    title: 'Backend',
-    icon: '⚙️',
-    skills: [
-      { name: 'Java', level: 90, icon: '☕' },
-      { name: 'Spring Boot', level: 85, icon: '🍃' },
-      { name: 'Hibernate / JPA', level: 80, icon: '🗄️' },
-      { name: 'JDBC', level: 80, icon: '🔌' },
-      { name: 'RESTful APIs', level: 88, icon: '🔗' },
-      { name: 'Maven', level: 75, icon: '📦' },
-    ],
-  },
-  {
-    title: 'Frontend',
-    icon: '🎨',
-    skills: [
-      { name: 'Angular', level: 85, icon: '🅰️' },
-      { name: 'HTML5', level: 95, icon: '📄' },
-      { name: 'CSS3', level: 90, icon: '🎨' },
-      { name: 'TypeScript', level: 85, icon: '⚡' },
-      { name: 'JavaScript', level: 80, icon: '📜' },
-    ],
-  },
-  {
-    title: 'Database & Tools',
-    icon: '🛠️',
-    skills: [
-      { name: 'MySQL', level: 85, icon: '🐬' },
-      { name: 'Git & GitHub', level: 80, icon: '🔧' },
-      { name: 'VS Code', level: 90, icon: '💻' },
-      { name: 'Eclipse', level: 85, icon: '🌙' },
-      { name: 'MySQL Workbench', level: 90, icon: '🗃️' },
-    ],
-  },
-  {
-    title: 'Core Concepts',
-    icon: '🧠',
-    skills: [
-      { name: 'OOP', level: 90, icon: '🏗️' },
-      { name: 'MVC Architecture', level: 85, icon: '📐' },
-      { name: 'Web App Development', level: 85, icon: '🌐' },
-      { name: 'Clean Code Practices', level: 85, icon: '✨' },
-    ],
-  },
+import { FaJava } from "react-icons/fa";
+import { BsShieldLockFill } from "react-icons/bs";
+import { FaDatabase } from "react-icons/fa";
+
+const skills = [
+  { name: "Java", icon: FaJava, color: "text-orange-500" },
+  { name: "Spring Boot", icon: SiSpringboot, color: "text-green-500" },
+  { name: "Spring Security", icon: BsShieldLockFill, color: "text-green-400" },
+  { name: "Angular", icon: SiAngular, color: "text-red-500" },
+  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+  { name: "HTML5", icon: SiHtml5, color: "text-orange-600" },
+  { name: "CSS3", icon: SiCss, color: "text-blue-500" },
+  { name: "MySQL", icon: SiMysql, color: "text-blue-400" },
+  { name: "Hibernate/JPA", icon: FaDatabase, color: "text-cyan-400" },
+  { name: "Git", icon: SiGit, color: "text-orange-500" },
+  { name: "GitHub", icon: SiGithub, color: "text-foreground" },
+  { name: "Postman", icon: SiPostman, color: "text-orange-500" },
 ];
+
 
 const experiences = [
   {
@@ -72,7 +56,6 @@ const experiences = [
       'Graduated with CGPA 8.8/10, strengthening programming fundamentals and core computer science concepts including Data Structures, DBMS, Operating Systems, and Computer Networks.',
   },
 ];
-
 export function Skills() {
   const [sectionRef, isVisible] = useScrollReveal<HTMLElement>({
     threshold: 0.15,
@@ -96,67 +79,79 @@ export function Skills() {
           )}
         >
 
-          {/* Heading */}
-          <div className="text-center space-y-4 mb-16">
-            <p className="text-sm text-primary font-medium uppercase tracking-wider">
-              My Skills & Journey
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              Technical Skill Set
-            </h2>
-          </div>
 
           {/* ================= SKILLS ================= */}
-          <div className="grid md:grid-cols-2 gap-x-24 gap-y-24 mb-28">
-            {skillCategories.map((category, categoryIndex) => (
-              <div
-                key={category.title}
-                className={cn(
-                  "bg-background/80 backdrop-blur-md  border border-black/30 dark:border-border/30  rounded-2xl p-12 shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-xl",
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
-                )}
-                style={{ transitionDelay: `${categoryIndex * 120}ms` }}
-              >
-                <div className="flex items-center gap-3 mb-8">
-                  <span className="text-2xl">{category.icon}</span>
-                  <h3 className="text-xl font-semibold">
-                    {category.title}
-                  </h3>
-                </div>
+          <div className="mb-28">
 
-                <div className="space-y-6">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between mb-2 text-sm font-medium">
-                        <div className="flex items-center gap-2">
-                          <span>{skill.icon}</span>
-                          <span>{skill.name}</span>
-                        </div>
-                        <span className="text-muted-foreground">
-                          {skill.level}%
-                        </span>
-                      </div>
+            <div className="text-center mb-12">
+              <p className="text-sm text-primary font-medium uppercase tracking-wider mb-2">
+                My Skills & Journey
+              </p>
 
-                      <div className="relative w-full h-2.5 bg-black/10 dark:bg-white/10 rounded-full overflow-hidden">
-                        <div
-                          className="absolute left-0 top-0 h-full bg-gradient-to-r from-primary to-primary/80 rounded-full transition-all duration-1000 ease-out"
-                          style={{
-                            width: isVisible ? `${skill.level}%` : "0%",
-                            transitionDelay: `${(categoryIndex * 4 + skillIndex) * 80}ms`,
-                          }}
-                        />
-                      </div>
+
+              <h3 className="text-3xl font-bold">
+                Technical Stack & Expertise
+              </h3>
+              <p className="mt-3 text-muted-foreground">
+                Technologies and tools I use to build modern, scalable full-stack applications.
+              </p>
+            </div>
+
+            <div
+              className="
+      max-w-[2000px] mx-auto
+      rounded-[32px]
+      border border-white/10
+      bg-background/40
+      backdrop-blur-2xl
+      p-8 lg:p-12
+      shadow-[0_20px_80px_rgba(0,0,0,0.1)]
+    "
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+                {skills.map((skill) => {
+                  const Icon = skill.icon;
+
+                  return (
+                    <div
+                      key={skill.name}
+                      className="
+              group
+              rounded-2xl
+              border border-white/10
+              bg-background/40
+              backdrop-blur-md
+              p-6
+              flex flex-col items-center
+              justify-center
+              transition-all duration-300
+              hover:-translate-y-2
+              hover:border-primary/30
+              hover:bg-primary/5
+              hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)]
+            "
+                    >
+                      <Icon
+                        className={`
+                text-5xl mb-4
+                ${skill.color}
+                transition-all duration-300
+                group-hover:scale-110
+              `}
+                      />
+
+                      <span className="text-sm font-medium text-center">
+                        {skill.name}
+                      </span>
                     </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+                  );
+                })}
 
-          {/* Divider */}
-          <div className="w-full h-px bg-border/50 my-24"></div>
+              </div>
+            </div>
+
+          </div>
 
           {/* ================= JOURNEY ================= */}
           <div>

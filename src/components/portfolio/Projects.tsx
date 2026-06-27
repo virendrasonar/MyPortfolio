@@ -9,41 +9,79 @@ const projects = [
     id: 1,
     title: 'Institute Management System',
     description:
-      'Full-stack web application for managing courses, student enquiries, and enrollments with RESTful APIs and responsive Angular frontend.',
-    image: '🏫',
-    tags: ['Spring Boot', 'Hibernate', 'JPA', 'PostgreSQL', 'Angular'],
+      'A platform for managing students, courses, enquiries, and enrollments through a user-friendly web interface.',
+    image: '/ims.png',
+    tags: ['Java', 'Spring Boot', 'Hibernate/JPA', 'REST APIs', 'Angular', 'PostgreSQL'
+    ],
+    highlights: [
+      'Manage students, courses, and enrollments efficiently',
+      'Track enquiries through an integrated admin dashboard',
+      'Responsive interface with RESTful API integration'
+    ],
     liveUrl: 'https://institute-management-system-frontend.onrender.com',
-    githubUrl: 'https://github.com/virendrasonar/Institute-Management-System.git',
+    githubUrl:
+      'https://github.com/virendrasonar/Institute-Management-System.git',
   },
+
   {
     id: 2,
-    title: 'Bus Ticket Booking App',
+    title: 'JWT Authentication System',
     description:
-      'Web-based ticket system supporting booking, search, and cancellation features with MySQL database integration.',
-    image: '🚌',
-    tags: ['Spring Boot', 'Hibernate', 'MySQL', 'HTML/CSS'],
-    liveUrl: 'https://bus-ticket-booking-app-k5lv.onrender.com',
-    githubUrl: 'https://github.com/virendrasonar/Bus-Ticket-Booking-Website.git',
+      'Secure authentication and authorization system using Spring Security and JWT tokens.',
+    image: 'jwt.png',
+    tags: [
+      'Java',
+      'Spring Boot',
+      'Spring Security',
+      'JWT',
+      'MySQL',
+      'HTML5',
+      'CSS3',
+      'JavaScript'
+
+    ],
+    highlights: [
+      'Implemented JWT-based authentication for secure user access',
+      'Integrated BCrypt password encryption for credential security',
+      'Developed protected REST APIs using Spring Security'
+    ],
+    liveUrl: 'Coming soon',
+    githubUrl: 'https://github.com/virendrasonar',
+
   },
+
   {
     id: 3,
-    title: 'TrendEttic - E-Commerce',
+    title: 'Bus Ticket Booking System',
     description:
-      'Responsive e-commerce website showcasing product listings with modern UI and smooth navigation.',
-    image: '🛍️',
-    tags: ['HTML5', 'CSS3', 'JavaScript'],
-    liveUrl: 'https://trend-ettic.netlify.app',
-    githubUrl: 'https://github.com/virendrasonar/TrendEttic-Ecommerce.git',
+      'Web-based ticket booking platform supporting bus search, ticket booking, cancellation, and database integration.',
+    image: '/bus.png',
+    tags: ['Java', 'Spring Boot', 'Hibernate/JPA', 'MySQL', 'Thymeleaf'],
+    highlights: [
+      'Built complete ticket booking and cancellation workflows',
+      'Developed server-side rendered UI using Thymeleaf',
+      'Integrated MySQL database and RESTful APIs'
+    ],
+    liveUrl: 'https://bus-ticket-booking-application-rd9z.onrender.com',
+    githubUrl:
+      'https://github.com/virendrasonar/Bus-Ticket-Booking-Application.git',
   },
+
   {
     id: 4,
-    title: 'Login System',
+    title: 'TrendEttic E-Commerce',
     description:
-      'Secure user authentication system with credential validation and MySQL integration deployed on Apache Tomcat.',
-    image: '🔐',
-    tags: ['Java', 'Servlets', 'JDBC', 'MySQL', 'Apache Tomcat'],
-    liveUrl: 'Under Maintainance -- Coming Soon',
-    githubUrl: 'https://github.com/virendrasonar',
+      'Responsive e-commerce website featuring product listings, modern UI design, and seamless navigation.',
+    image: 't.png',
+    tags: ['HTML5', 'CSS3', 'JavaScript'],
+    highlights: [
+      'Built responsive e-commerce website layouts',
+      'Created product showcase and navigation features',
+      'Implemented modern UI using HTML, CSS, and JavaScript'
+    ],
+    liveUrl: 'https://trend-ettic.netlify.app',
+    githubUrl:
+      'https://github.com/virendrasonar/TrendEttic-Ecommerce.git',
   },
 ];
 
@@ -58,9 +96,9 @@ export function Projects() {
       id="projects"
       className="py-24 relative overflow-hidden bg-[hsl(var(--section-3))] py-28"
     >
-      <div className="container mx-auto px-6 lg:px-16 relative z-10">
+      {/* Section Header */}
+      <div className="max-w-8xl mx-auto px-4 lg:px-10 relative z-10">
 
-        {/* Section Header */}
         <div
           className={cn(
             'text-center mb-14 transition-all duration-700',
@@ -79,67 +117,87 @@ export function Projects() {
         </div>
 
         {/* Equal Grid Layout */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-2 gap-10">
-
+        <div className="space-y-14">
           {projects.map((project, index) => (
             <div
               key={project.id}
               className={cn(
-                "group relative rounded-3xl border border-black/ dark:border-white/25  bg-background/70 backdrop-blur-xl p-8 shadow-[0_15px_50px_rgba(0,0,0,0.07)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_30px_80px_rgba(99,102,241,0.15)] hover:border-primary/40",
+                "h-[330px] w-full group flex flex-col lg:flex-row overflow-hidden rounded-2xl border border-primary/20 bg-background/70 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_30px_80px_rgba(99,102,241,0.15)]",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               )}
               style={{ transitionDelay: `${index * 120}ms` }}
             >
 
-              {/* Icon */}
-              <div className="text-6xl mb-6 transition-transform duration-500 group-hover:scale-110">
-                {project.image}
+              <div className="lg:w-[60%] flex flex-col">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover "
+                />
               </div>
 
-              {/* Title */}
-              <h3 className="text-xl font-semibold mb-3 transition-colors duration-300 group-hover:text-primary">
-                {project.title}
-              </h3>
+              {/* Right Content */}
+              <div className="lg:w-[85%] p-8 flex flex-col justify-center">
 
-              {/* Description */}
-              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                {project.description}
-              </p>
+                <h3 className="text-2xl font-bold mb-4 text-primary">
+                  {project.title}
+                </h3>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tags.map((tag) => (
-                  <Badge
-                    key={tag}
-                    variant="secondary"
-                    className="text-xs bg-muted hover:bg-primary/20 transition-colors"
+                <p className="text-muted-foreground leading-relaxed mb-5">
+                  {project.description}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tags.map((tag) => (
+                    <Badge
+                      key={tag}
+                      variant="secondary"
+                      className="rounded-full"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+
+                {/* Highlights */}
+                <div className="space-y-3 mb-6">
+                  {project.highlights.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 text-muted-foreground"
+                    >
+                      <span className="text-primary">→</span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="flex items-center gap-6 mt-auto">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-primary hover:underline"
                   >
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
+                    <Github className="h-4 w-4" />
+                    GitHub
+                  </a>
 
-              {/* Links */}
-              <div className="flex items-center gap-6 text-sm">
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-primary hover:underline"
-                >
-                  <Github className="h-4 w-4" />
-                  GitHub
-                </a>
+                  {project.liveUrl !== "#" && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      Live Demo
+                    </a>
+                  )}
+                </div>
 
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  Live Demo
-                </a>
               </div>
 
             </div>
@@ -162,6 +220,6 @@ export function Projects() {
         </div>
 
       </div>
-    </section>
+    </section >
   );
 }

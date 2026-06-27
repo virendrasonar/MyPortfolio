@@ -50,15 +50,15 @@ export function About() {
           >
             <div className="space-y-8 text-muted-foreground text-base md:text-lg leading-relaxed text-justify">
               <p>
-                I am a Java Full Stack Developer with strong expertise in backend development using Java and Spring Boot, complemented by hands-on experience in Angular. I design RESTful APIs, implement structured business logic, and integrate relational databases with efficiency and precision.
+                I am a Java Full Stack Developer with experience building web applications using Java, Spring Boot, Angular, REST APIs, and MySQL. I enjoy developing complete solutions that combine intuitive user interfaces with scalable backend systems.
               </p>
 
               <p>
-                I began my journey in web development, which sparked a deep curiosity about how frontend and backend systems work together to create reliable, high-performing applications. As I explored further, I developed a strong interest in backend architecture and full-stack engineering.
+                My interest in software development began with web technologies and grew into a passion for creating end-to-end applications. Working across both frontend and backend has given me a strong understanding of how different parts of an application come together to deliver a seamless user experience.
               </p>
 
               <p>
-                I emphasize clean, modular code and robust application architecture to deliver maintainable and production-ready solutions. My objective is to build impactful, performance-driven software while continuously advancing my technical expertise.
+                I focus on writing clean, maintainable code and building reliable software solutions. Through continuous learning and hands-on projects, I strive to improve my technical skills and create applications that are both efficient and user-friendly.
               </p>
             </div>
           </div>
@@ -71,13 +71,13 @@ export function About() {
                 2023
               </div>
               <div className="text-sm text-muted-foreground mt-2 transition-all duration-300 group-hover:text-primary">
-                B.Tech Graduate
+                B.Tech CSE Graduate
               </div>
             </div>
 
             <div className="group transition-all duration-300 hover:-translate-y-1">
               <div className="text-3xl font-bold text-primary transition-all duration-300 group-hover:drop-shadow-[0_0_14px_rgba(99,102,241,0.9)]">
-                7+
+                10+
               </div>
               <div className="text-sm text-muted-foreground mt-2 transition-all duration-300 group-hover:text-primary">
                 Hands-On Projects Built

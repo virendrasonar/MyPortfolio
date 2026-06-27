@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin, Download, MessageCircle } from 'lucide-react';
-
+import { ArrowDown, Github, Linkedin, Download, MessageCircle, Instagram } from 'lucide-react';
 export function Hero() {
 
   const scrollToProjects = () => {
@@ -18,14 +17,12 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden bg-[hsl(var(--section-1))] py-28"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
-
-        <div className="grid lg:grid-cols-2 items-center gap-24">
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/8 via-transparent to-blue-500/8" />
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
 
           {/* LEFT SECTION */}
-          <div className="space-y-6 text-left">
+          <div className="space-y-6 text-center lg:text-left">
 
             <p
               className="text-base text-muted-foreground opacity-0 animate-[simpleFade_0.6s_ease-out_forwards]"
@@ -34,7 +31,7 @@ export function Hero() {
               Welcome to my portfolio
             </p>
 
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-snug overflow-hidden mt-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-snug overflow-hidden mt-2">
 
               {"Hi, I am ".split("").map((char, index) => (
                 <span
@@ -63,14 +60,14 @@ export function Hero() {
               Java Full Stack Developer
             </h2>
 
-            <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl opacity-0 animate-[fadeUp_0.6s_ease-out_forwards]"
+            <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0 opacity-0 animate-[fadeUp_0.6s_ease-out_forwards]"
               style={{ animationDelay: '2.3s' }}>
               I build scalable full-stack web applications with a strong backend logic and clean, intuitive design.
             </p>
 
             {/* BUTTONS */}
             <div
-              className="flex flex-wrap gap-4 pt-4 opacity-0 animate-[fadeUp_0.6s_ease-out_forwards]"
+              className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4 opacity-0 animate-[fadeUp_0.6s_ease-out_forwards]"
               style={{ animationDelay: '2.6s' }}
             >
 
@@ -79,47 +76,21 @@ export function Hero() {
                 size="lg"
                 onClick={scrollToProjects}
                 className="
-      bg-primary hover:bg-primary/90
-      text-primary-foreground
-      rounded-[8px]
-      transition-all duration-300
-      shadow-sm hover:shadow-md
+      w-full sm:w-auto
+      bg-primary hover:bg-primary/90 
     "
               >
                 View Projects
               </Button>
 
-              {/* 2️⃣ Resume — Strong Outline */}
-              <a
-                href="/virendra-sonar-java-full-stack-developer-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="
-        border-primary text-primary
-        hover:bg-primary hover:text-primary-foreground
-        rounded-[8px]
-        transition-all duration-300
-      "
-                >
-                  <Download className="mr-2 h-4 w-4" />
-                  Resume
-                </Button>
-              </a>
-
-              {/* 3️⃣ Contact — Same Outline Style */}
+              {/*  Contact — Same Outline Style */}
               <Button
                 size="lg"
                 variant="outline"
                 onClick={scrollToContact}
                 className="
+      w-full sm:w-auto
       border-primary text-primary
-      hover:bg-primary hover:text-primary-foreground
-      rounded-[8px]
-      transition-all duration-300
     "
               >
                 Contact Me
@@ -129,7 +100,7 @@ export function Hero() {
 
             {/* SOCIAL ICONS */}
             <div
-              className="flex gap-5 pt-6 opacity-0 animate-[fadeUp_0.6s_ease-out_forwards]"
+              className="flex justify-center lg:justify-start gap-5 pt-6 opacity-0 animate-[fadeUp_0.6s_ease-out_forwards]"
               style={{ animationDelay: '2.9s' }}
             >
 
@@ -163,12 +134,22 @@ export function Hero() {
                 <MessageCircle className="h-5 w-5 text-black dark:text-white group-hover:text-white transition" />
               </a>
 
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/viru_187"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-3 rounded-full border border-black/20 dark:border-white/10 bg-white/5 backdrop-blur-sm shadow-lg hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <Instagram className="h-5 w-5 text-black dark:text-white group-hover:text-white transition" />
+              </a>
+
             </div>
 
           </div>
 
           {/* RIGHT SECTION */}
-          <div className="flex justify-end">
+          <div className="flex justify-center lg:justify-end order-first lg:order-last">
 
             <div
               className="relative opacity-0 animate-[photoReveal_0.8s_ease-out_forwards]"
@@ -177,9 +158,9 @@ export function Hero() {
               <div className="absolute w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
 
               <img
-                src="/profile.jpg"
+                src="/p.png"
                 alt="Virendra Sonar"
-                className="relative w-64 h-64 lg:w-72 lg:h-72 rounded-full object-cover border-4 border-primary shadow-2xl"
+                className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72 rounded-full object-cover border-4 border-primary shadow-2xl"
               />
 
             </div>
