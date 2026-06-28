@@ -94,11 +94,9 @@ export function Projects() {
     <section
       ref={sectionRef}
       id="projects"
-      className="py-24 relative overflow-hidden bg-[hsl(var(--section-3))] py-28"
-    >
+      className="relative overflow-hidden bg-[hsl(var(--section-3))] py-16 sm:py-20 lg:py-28"    >
       {/* Section Header */}
-      <div className="max-w-8xl mx-auto px-4 lg:px-10 relative z-10">
-
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         <div
           className={cn(
             'text-center mb-14 transition-all duration-700',
@@ -108,7 +106,7 @@ export function Projects() {
           <p className="text-sm text-primary font-medium uppercase tracking-wider mb-2">
             My Work
           </p>
-          <h2 className="text-4xl font-bold">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
             Featured Projects
           </h2>
           <p className="mt-4 text-[17px] md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
@@ -117,33 +115,31 @@ export function Projects() {
         </div>
 
         {/* Equal Grid Layout */}
-        <div className="space-y-14">
+        <div className="space-y-8 lg:space-y-14">
           {projects.map((project, index) => (
             <div
               key={project.id}
               className={cn(
-                "h-[330px] w-full group flex flex-col lg:flex-row overflow-hidden rounded-2xl border border-primary/20 bg-background/70 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_30px_80px_rgba(99,102,241,0.15)]",
+                "w-full min-h-[320px] group flex flex-col lg:flex-row overflow-hidden rounded-2xl border border-primary/20 bg-background/70 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_30px_80px_rgba(99,102,241,0.15)]",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               )}
               style={{ transitionDelay: `${index * 120}ms` }}
             >
 
-              <div className="lg:w-[60%] flex flex-col">
+              <div className="w-full lg:w-[50%] flex">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover "
-                />
+                  className="w-full h-56 sm:h-72 lg:h-full object-cover" />
               </div>
 
               {/* Right Content */}
-              <div className="lg:w-[85%] p-8 flex flex-col justify-center">
-
-                <h3 className="text-2xl font-bold mb-4 text-primary">
+              <div className="w-full lg:w-[55%] p-5 sm:p-6 lg:p-8 flex flex-col justify-center">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 text-primary">
                   {project.title}
                 </h3>
 
-                <p className="text-muted-foreground leading-relaxed mb-5">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-5">
                   {project.description}
                 </p>
 
@@ -153,7 +149,7 @@ export function Projects() {
                     <Badge
                       key={tag}
                       variant="secondary"
-                      className="rounded-full"
+                      className="rounded-full text-xs sm:text-sm px-2 py-1"
                     >
                       {tag}
                     </Badge>
@@ -161,7 +157,7 @@ export function Projects() {
                 </div>
 
                 {/* Highlights */}
-                <div className="space-y-3 mb-6">
+                <div className="space-y-2 mb-6 text-sm sm:text-base">
                   {project.highlights.map((item) => (
                     <div
                       key={item}
@@ -174,26 +170,26 @@ export function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex items-center gap-6 mt-auto">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-primary hover:underline"
-                  >
-                    <Github className="h-4 w-4" />
-                    GitHub
-                  </a>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-auto">                  <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-primary hover:underline"
+                >
+                  <Github className="h-4 w-4" />
+                  GitHub
+                </a>
 
                   {project.liveUrl !== "#" && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                      className="flex items-center gap-2 text-primary hover:text-green-500 transition-colors"
                     >
                       <ExternalLink className="h-4 w-4" />
-                      Live Demo (Just Wait for 1-2 minutes to load the backend after inactivity)
+
+                      Live Demo
                     </a>
                   )}
                 </div>
