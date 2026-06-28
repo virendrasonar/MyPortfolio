@@ -193,7 +193,7 @@ export function Projects() {
                       className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                     >
                       <ExternalLink className="h-4 w-4" />
-                      Live Demo
+                      Live Demo (Just Wait for 1-2 minutes to load the backend after inactivity)
                     </a>
                   )}
                 </div>
