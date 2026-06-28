@@ -45,8 +45,8 @@ const projects = [
       'Integrated BCrypt password encryption for credential security',
       'Developed protected REST APIs using Spring Security'
     ],
-    liveUrl: 'Coming soon',
-    githubUrl: 'https://github.com/virendrasonar',
+    liveUrl: 'https://jwt-authentication-system-de43.onrender.com',
+    githubUrl: 'https://github.com/virendrasonar/jwt-authentication-system.git',
 
   },
 
