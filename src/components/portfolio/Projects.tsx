@@ -28,7 +28,7 @@ const projects = [
     title: 'JWT Authentication System',
     description:
       'Secure authentication and authorization system using Spring Security and JWT tokens.',
-    image: 'jwt.png',
+    image: 'jwts.png',
     tags: [
       'Java',
       'Spring Boot',
