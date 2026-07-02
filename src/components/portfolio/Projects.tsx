@@ -18,7 +18,7 @@ const projects = [
       'Track enquiries through an integrated admin dashboard',
       'Responsive interface with RESTful API integration'
     ],
-    liveUrl: 'https://institute-management-system-frontend.onrender.com',
+    liveUrl: 'https://lovely-art-production.up.railway.app',
     githubUrl:
       'https://github.com/virendrasonar/Institute-Management-System.git',
   },
@@ -45,7 +45,7 @@ const projects = [
       'Integrated BCrypt password encryption for credential security',
       'Developed protected REST APIs using Spring Security'
     ],
-    liveUrl: 'https://jwt-authentication-system-de43.onrender.com',
+    liveUrl: 'https://jwt-authentication-system-production.up.railway.app',
     githubUrl: 'https://github.com/virendrasonar/jwt-authentication-system.git',
 
   },
@@ -62,7 +62,7 @@ const projects = [
       'Developed server-side rendered UI using Thymeleaf',
       'Integrated MySQL database and RESTful APIs'
     ],
-    liveUrl: 'https://bus-ticket-booking-application-rd9z.onrender.com',
+    liveUrl: 'https://bus-ticket-booking-application-6hwb.onrender.com',
     githubUrl:
       'https://github.com/virendrasonar/Bus-Ticket-Booking-Application.git',
   },
